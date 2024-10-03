@@ -44,4 +44,10 @@ public class Movie {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "id = " + id + ", genre = " + genre +
+                ", duration = " + duration + ", description = '" + description;
+    }
 }

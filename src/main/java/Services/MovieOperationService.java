@@ -15,9 +15,11 @@ public class MovieOperationService implements MovieService {
     }
 
     @Override
-    public void createMovie(Long id, int genre, float duration, String description) {
+    public Movie createMovie(Long id, int genre, float duration, String description) {
         Movie movie = new Movie(id, genre, duration, description);
         repository.create(movie);
+
+        return movie;
     }
 
     @Override

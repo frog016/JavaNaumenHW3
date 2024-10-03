@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 public interface MovieService {
-    void createMovie(Long id, int genre, float duration, String description);
+    Movie createMovie(Long id, int genre, float duration, String description);
     Movie findById(Long id);
     void deleteById(Long id);
     void updateDescription(Long id, String description);
