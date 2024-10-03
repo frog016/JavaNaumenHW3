@@ -1,4 +1,4 @@
-package Cinema;
+package org.example.JavaNaumenHW3.Cinema;
 
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
-package Controllers;
+package org.example.JavaNaumenHW3.Controllers;
 
-import Cinema.Movie;
-import Services.MovieService;
+import org.example.JavaNaumenHW3.Cinema.Movie;
+import org.example.JavaNaumenHW3.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

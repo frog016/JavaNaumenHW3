@@ -1,9 +1,6 @@
-package Services;
+package org.example.JavaNaumenHW3.Services;
 
-import Cinema.Movie;
-import Database.MovieRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.example.JavaNaumenHW3.Cinema.Movie;
 
 public interface MovieService {
     Movie createMovie(Long id, int genre, float duration, String description);

@@ -1,6 +1,6 @@
-package Database;
+package org.example.JavaNaumenHW3.Database;
 
-import Cinema.Movie;
+import org.example.JavaNaumenHW3.Cinema.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

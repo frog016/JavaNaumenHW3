@@ -1,7 +1,7 @@
-package Services;
+package org.example.JavaNaumenHW3.Services;
 
-import Cinema.Movie;
-import Database.MovieRepository;
+import org.example.JavaNaumenHW3.Cinema.Movie;
+import org.example.JavaNaumenHW3.Database.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

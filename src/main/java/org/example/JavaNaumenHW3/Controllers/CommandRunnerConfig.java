@@ -1,4 +1,4 @@
-package Controllers;
+package org.example.JavaNaumenHW3.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Scanner;
 
-@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Configuration
 public class CommandRunnerConfig {
     private final CommandLineController commandLineController;

@@ -1,4 +1,4 @@
-package Cinema;
+package org.example.JavaNaumenHW3.Cinema;
 
 public class Movie {
     private Long id;
