@@ -32,8 +32,8 @@ public class CommandLineController {
 
     private void applyCreateCommand(String[] commandArguments) {
         Long id = Long.parseLong(commandArguments[0]);
-        int genre = Integer.parseInt(commandArguments[2]);
-        float duration = Float.parseFloat(commandArguments[1]);
+        int genre = Integer.parseInt(commandArguments[1]);
+        float duration = Float.parseFloat(commandArguments[2]);
         String description = commandArguments[3];
 
         Movie movie = movieService.createMovie(id, genre, duration, description);
