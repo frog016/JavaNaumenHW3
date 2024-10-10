@@ -16,25 +16,25 @@ public class CommandRunnerConfig {
         this.commandLineController = commandLineController;
     }
 
-    @Bean
-    public CommandLineRunner scanCommands() {
-        return args -> {
-            try (Scanner scanner = new Scanner(System.in))
-            {
-                System.out.println("Введите команду. 'exit' для выхода.");
-                while (true)
-                {
-                    System.out.print("> ");
-                    String input = scanner.nextLine();
-                    if ("exit".equalsIgnoreCase(input.trim()))
-                    {
-                        System.out.println("Выход из программы...");
-                        break;
-                    }
-
-                    commandLineController.processCommand(input);
-                }
-            }
-        };
-    }
+//    @Bean
+//    public CommandLineRunner scanCommands() {
+//        return args -> {
+//            try (Scanner scanner = new Scanner(System.in))
+//            {
+//                System.out.println("Введите команду. 'exit' для выхода.");
+//                while (true)
+//                {
+//                    System.out.print("> ");
+//                    String input = scanner.nextLine();
+//                    if ("exit".equalsIgnoreCase(input.trim()))
+//                    {
+//                        System.out.println("Выход из программы...");
+//                        break;
+//                    }
+//
+//                    commandLineController.processCommand(input);
+//                }
+//            }
+//        };
+//    }
 }

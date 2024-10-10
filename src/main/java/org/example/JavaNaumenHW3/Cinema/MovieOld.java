@@ -1,12 +1,12 @@
 package org.example.JavaNaumenHW3.Cinema;
 
-public class Movie {
+public class MovieOld {
     private Long id;
     private int genre;
     private float duration;
     private String description;
 
-    public Movie(Long id, int genre, float duration, String description) {
+    public MovieOld(Long id, int genre, float duration, String description) {
         this.id = id;
         this.genre = genre;
         this.duration = duration;

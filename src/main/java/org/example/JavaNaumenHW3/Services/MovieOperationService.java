@@ -1,29 +1,29 @@
 package org.example.JavaNaumenHW3.Services;
 
-import org.example.JavaNaumenHW3.Cinema.Movie;
-import org.example.JavaNaumenHW3.Database.MovieRepository;
+import org.example.JavaNaumenHW3.Cinema.MovieOld;
+import org.example.JavaNaumenHW3.Database.MovieOldRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MovieOperationService implements MovieService {
-    private final MovieRepository repository;
+    private final MovieOldRepository repository;
 
     @Autowired
-    public MovieOperationService(MovieRepository repository) {
+    public MovieOperationService(MovieOldRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public Movie createMovie(Long id, int genre, float duration, String description) {
-        Movie movie = new Movie(id, genre, duration, description);
-        repository.create(movie);
+    public MovieOld createMovie(Long id, int genre, float duration, String description) {
+        MovieOld movieOld = new MovieOld(id, genre, duration, description);
+        repository.create(movieOld);
 
-        return movie;
+        return movieOld;
     }
 
     @Override
-    public Movie findById(Long id) {
+    public MovieOld findById(Long id) {
         return repository.read(id);
     }
 
@@ -34,9 +34,9 @@ public class MovieOperationService implements MovieService {
 
     @Override
     public void updateDescription(Long id, String description) {
-        Movie oldMovie = repository.read(id);
-        Movie newMovie = new Movie(id, oldMovie.getGenre(), oldMovie.getDuration(), description);
+        MovieOld oldMovieOld = repository.read(id);
+        MovieOld newMovieOld = new MovieOld(id, oldMovieOld.getGenre(), oldMovieOld.getDuration(), description);
 
-        repository.update(newMovie);
+        repository.update(newMovieOld);
     }
 }
