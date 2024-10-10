@@ -1,6 +1,6 @@
 package org.example.JavaNaumenHW3.Controllers;
 
-import org.example.JavaNaumenHW3.Cinema.Movie;
+import org.example.JavaNaumenHW3.Cinema.MovieOld;
 import org.example.JavaNaumenHW3.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,15 +36,15 @@ public class CommandLineController {
         float duration = Float.parseFloat(commandArguments[2]);
         String description = commandArguments[3];
 
-        Movie movie = movieService.createMovie(id, genre, duration, description);
-        System.out.println("Добавлен фильм: " + movie);
+        MovieOld movieOld = movieService.createMovie(id, genre, duration, description);
+        System.out.println("Добавлен фильм: " + movieOld);
     }
 
     private void applyFindCommand(String[] commandArguments) {
         Long id = Long.parseLong(commandArguments[0]);
-        Movie movie = movieService.findById(id);
+        MovieOld movieOld = movieService.findById(id);
 
-        System.out.println("Найден фильм: " + movie);
+        System.out.println("Найден фильм: " + movieOld);
     }
 
     private void applyDeleteCommand(String[] commandArguments) {

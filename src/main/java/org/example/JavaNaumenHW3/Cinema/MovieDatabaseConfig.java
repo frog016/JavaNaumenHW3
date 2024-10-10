@@ -12,7 +12,7 @@ import java.util.List;
 public class MovieDatabaseConfig {
     @Bean
     @Scope(value = BeanDefinition.SCOPE_SINGLETON)
-    public List<Movie> moviesDatabaseImitation() {
+    public List<MovieOld> moviesDatabaseImitation() {
         return new ArrayList<>();
     }
 }
