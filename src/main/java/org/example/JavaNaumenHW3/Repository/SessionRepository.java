@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface SessionRepository extends CrudRepository<Session, Long> {
     @Query("FROM Session WHERE hall.display = :hallDisplay")
-    List<Hall> findByHall(String hallDisplay);
+    List<Session> findByHall(String hallDisplay);
 }
