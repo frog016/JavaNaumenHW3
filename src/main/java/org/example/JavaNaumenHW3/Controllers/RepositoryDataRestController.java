@@ -13,12 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/data")
-public class RepositoryDataController {
+public class RepositoryDataRestController {
     private final MovieRepository movieRepository;
     private final TicketRepository ticketRepository;
 
     @Autowired
-    public RepositoryDataController(MovieRepository movieRepository, TicketRepository ticketRepository) {
+    public RepositoryDataRestController(MovieRepository movieRepository, TicketRepository ticketRepository) {
         this.movieRepository = movieRepository;
         this.ticketRepository = ticketRepository;
     }
