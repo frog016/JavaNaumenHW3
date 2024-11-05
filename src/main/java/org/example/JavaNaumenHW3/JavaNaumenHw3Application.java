@@ -9,5 +9,4 @@ public class JavaNaumenHw3Application {
 	public static void main(String[] args) {
 		SpringApplication.run(JavaNaumenHw3Application.class, args);
 	}
-
 }
