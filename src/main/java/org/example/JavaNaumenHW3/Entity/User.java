@@ -20,6 +20,9 @@ public class User {
     @Column
     private String phoneNumber;
 
+    @Column
+    private String password;
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -50,5 +53,13 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

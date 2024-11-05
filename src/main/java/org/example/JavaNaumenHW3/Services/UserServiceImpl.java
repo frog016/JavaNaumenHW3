@@ -15,11 +15,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(String fullName, String email, String phoneNumber) {
+    public User createUser(String fullName, String email, String phoneNumber, String password) {
         User user = new User();
         user.setFullName(fullName);
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
+        user.setPassword(password);
 
         return userRepository.save(user);
     }
@@ -27,6 +28,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public User findByFullName(String fullName) {
+        return userRepository.findByFullName(fullName);
     }
 
     @Override
