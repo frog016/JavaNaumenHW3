@@ -19,6 +19,9 @@ public class MyUserDetailService implements UserDetailsService {
     @Autowired
     public MyUserDetailService(UserService userService) {
         this.userService = userService;
+
+        userService.createUser("person1", "mail", "8999", "123", "admin");
+        userService.createUser("person2", "mail2", "8111", "123", "user");
     }
 
     @Override
@@ -38,7 +41,7 @@ public class MyUserDetailService implements UserDetailsService {
 
     private Collection<GrantedAuthority> mapRoles(User user) {
         var roles = new ArrayList<GrantedAuthority>();
-        roles.add(new SimpleGrantedAuthority("ROLE_user"));
+        roles.add(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
 
         return roles;
     }

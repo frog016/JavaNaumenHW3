@@ -15,12 +15,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(String fullName, String email, String phoneNumber, String password) {
+    public User createUser(String fullName, String email, String phoneNumber, String password, String role) {
         User user = new User();
         user.setFullName(fullName);
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
         user.setPassword(password);
+        user.setRole(role);
 
         return userRepository.save(user);
     }

@@ -23,6 +23,9 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private String role;
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -61,5 +64,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

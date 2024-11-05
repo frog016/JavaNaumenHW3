@@ -3,7 +3,7 @@ package org.example.JavaNaumenHW3.Services;
 import org.example.JavaNaumenHW3.Entity.User;
 
 public interface UserService {
-    User createUser(String fullName, String email, String phoneNumber, String password);
+    User createUser(String fullName, String email, String phoneNumber, String password, String role);
     User findById(Long id);
     User findByFullName(String fullName);
     void deleteById(Long id);
