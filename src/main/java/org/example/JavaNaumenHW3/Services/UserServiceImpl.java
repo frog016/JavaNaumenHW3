@@ -3,15 +3,21 @@ package org.example.JavaNaumenHW3.Services;
 import org.example.JavaNaumenHW3.Entity.User;
 import org.example.JavaNaumenHW3.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -20,7 +26,7 @@ public class UserServiceImpl implements UserService {
         user.setFullName(fullName);
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         user.setRole(role);
 
         return userRepository.save(user);
@@ -33,7 +39,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByFullName(String fullName) {
-        return userRepository.findByFullName(fullName);
+        List<User> users = userRepository.findByFullName(fullName);
+        return users.isEmpty() ? null : users.getFirst();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package org.example.JavaNaumenHW3.Services;
 
 import org.example.JavaNaumenHW3.Entity.User;
+import org.example.JavaNaumenHW3.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +18,7 @@ public class MyUserDetailService implements UserDetailsService {
     private final UserService userService;
 
     @Autowired
-    public MyUserDetailService(UserService userService) {
+    public MyUserDetailService(UserService userService, UserRepository userRepository) {
         this.userService = userService;
 
         userService.createUser("person1", "mail", "8999", "123", "admin");
@@ -26,7 +27,7 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userService.findByFullName(username);
+        var user = userService.findByFullName(username);
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(
                     user.getFullName(),
